@@ -17,7 +17,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class UserWindow {
+
+    @Autowired
+    private UserService userService;
 
     public JPanel createUserPanel() {
         JPanel p1 = new JPanel();    //面板1
@@ -85,13 +89,8 @@ public class UserWindow {
     }
 
     public void login(Map<String, Object> map) throws Exception {
-
-        UserService userService = new UserServiceImpl();
-
         HttpResult httpResult = userService.doPost("http://localhost:9091/user/login", map, null);
-
         System.err.println(httpResult);
-
     }
 
 }

@@ -1,5 +1,6 @@
 package com.dhr.window;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -9,10 +10,13 @@ import java.awt.*;
 public class MainWindow extends JFrame {
     private static final String main_title = "个人网站";
 
-    public MainWindow() {
+    private UserWindow userWindow;
+
+    public MainWindow(UserWindow userWindow) {
         super(main_title);
+        this.userWindow = userWindow;
         Container container = this.getContentPane();
-        container.add(this.setPanel());
+        container.add(this.getUserPanel());
         this.setBounds(300, 200, 800, 600);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,8 +28,7 @@ public class MainWindow extends JFrame {
      *
      * @return
      */
-    public JPanel setPanel() {
-        UserWindow userWindow = new UserWindow();
+    public JPanel getUserPanel() {
         return userWindow.createUserPanel();
     }
 }
