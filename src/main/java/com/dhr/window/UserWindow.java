@@ -22,14 +22,14 @@ public class UserWindow {
     public JPanel createUserPanel() {
         JPanel p1 = new JPanel();    //面板1
         JPanel p2 = new JPanel();    //面板2
-        JPanel p3 = new JPanel();    //面板2
+        JPanel p3 = new JPanel();    //面板24
         JPanel p4 = new JPanel();    //面板2
         JPanel cards = new JPanel(new CardLayout());    //卡片式布局的面板
 
         cards.add(p1, "card1");    //向卡片式布局面板中添加面板1
         cards.add(p2, "card2");    //向卡片式布局面板中添加面板2
         CardLayout cl = (CardLayout) (cards.getLayout());
-        cl.show(cards, "card1");    //调用show()方法显示面板2
+        cl.show(cards, "card1");    //调用show()方法显示面板1
 
         this.setLoginAndRegisterPanel(p1, cl, cards);
         this.setTextfieldPanel(p2, p3, p4, cl, cards);

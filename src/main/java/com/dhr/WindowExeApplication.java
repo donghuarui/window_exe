@@ -11,7 +11,7 @@ public class WindowExeApplication {
 
 	public static void main(String[] args) {
 //      	MainWindow mainWindow = new MainWindow();
-		//SpringApplication.run(WindowExeApplication.class, args);
+//		SpringApplication.run(WindowExeApplication.class, args);
 
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(WindowExeApplication.class);
 		ApplicationContext applicationContext = builder.headless(false).run(args);
